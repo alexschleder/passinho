@@ -1,6 +1,6 @@
 public class Main
 {
-  public static void main (string []args)
+  public static void main (String []args)
   {
     System.out.println("passinho do romano");
   }
