@@ -16,7 +16,7 @@ public class Var extends Exp {
     } else if(e.lerTipo(var) == Tipo.bool){
       return new Bool(e.lerBool(var));
     } else {
-      //TODO: undefined
+      return this;
     }
       
   }
