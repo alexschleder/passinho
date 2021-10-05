@@ -2,7 +2,7 @@ public class Bool extends Exp{
     private boolean valorBoolean;
 
     public Bool(boolean valorBoolean){
-        this.valor = valorBoolean;
+        this.valorBoolean = valorBoolean;
     }
 
     public boolean getValorBoolean(){
