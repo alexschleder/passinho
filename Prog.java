@@ -96,13 +96,7 @@ public class Prog extends Exp
 
         @Override
         Exp smallstep(Estado e) {
-            if (!(b instanceof Bool)) return new Prog((BoolExp)b.smallstep(e), c);
-            else
-            {
-                Bool bool = (Bool) b;
-                if (bool.getValorBoolean()) return new Prog(b, new Prog(c, new Prog(b, c)), new Prog());
-                else return new Prog();
-            }
+            return new Prog(b, new Prog(c, new Prog(b, c)), new Prog());
         }
     
         @Override
@@ -161,7 +155,7 @@ public class Prog extends Exp
     
         @Override
         public String toString() {
-            return "If " + c1.toString() + " then " + c2.toString();
+            return "If " + b.toString() + " then " + c1.toString() + " else " + c2.toString();
         }
     }
 
@@ -179,7 +173,7 @@ public class Prog extends Exp
 
         @Override
         Exp smallstep(Estado e) {
-            if (!(b instanceof Bool)) return new Prog((BoolExp) b.smallstep(e), c1);
+            if (!(b instanceof Bool)) return new Prog((BoolExp) b.smallstep(e), c1, new Prog());
             else 
             {
                 Bool bool = (Bool) b;

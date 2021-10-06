@@ -4,7 +4,6 @@ public class OpRel extends Exp
 
     public OpRel(char op)
     {
-        if (op != '=' || op != '>' || op != '<') return; //todo
         this.op = op;
     }
 
