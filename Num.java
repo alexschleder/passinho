@@ -1,7 +1,8 @@
-public class Num extends Exp{
+public class Num extends AritExp{
     private int valor;
 
     public Num(int valor) {
+        super(valor);
         this.valor = valor;
     }
 

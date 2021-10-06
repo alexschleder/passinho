@@ -2,14 +2,13 @@ public class OpArit extends Exp {
   private char op;
 
   OpArit(char op) {
-    if (op != '+' || op != '-' || op != '*') return; //todo
     this.op = op;
   }
 
   public char getValor()
-    {
-        return op;
-    }
+  {
+      return op;
+  }
 
     @Override
     Exp smallstep(Estado e) {
@@ -18,6 +17,6 @@ public class OpArit extends Exp {
 
     @Override
     public String toString() {
-        return op+"";
+        return String.valueOf(op);
     }
 }

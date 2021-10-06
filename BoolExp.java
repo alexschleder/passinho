@@ -15,11 +15,9 @@ public class BoolExp extends Exp {
         this.exp1 = exp1;
     }
 
-    // 𝑏 ∷= 𝑏𝑙 | 𝑥 | 𝑏1 𝑏𝑜𝑝 𝑏2 | !𝑏 | 𝑎1 𝑟𝑜𝑝 𝑎2
+    protected BoolExp(boolean valorBoolean)
+    {
 
-    @Override
-    public String toString() {
-        return exp1 + op.toString() + exp2;
     }
 
     @Override
@@ -58,5 +56,10 @@ public class BoolExp extends Exp {
                 }
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "("+exp1 + " " + op.toString() + " " + exp2+")";
     }
 }

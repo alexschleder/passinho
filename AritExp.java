@@ -9,6 +9,9 @@ public class AritExp extends Exp {
     this.op = op;
   }
 
+  protected AritExp(int valor) {
+}
+
   @Override
   Exp smallstep(Estado e) {
     if (!(exp1 instanceof Num)) {
@@ -16,11 +19,12 @@ public class AritExp extends Exp {
     } else if (!(exp2 instanceof Num)) {
       return new AritExp(exp1, op, exp2.smallstep(e));
     } else {
-      if (op.toString().equals("+")) {
+      if (op.getValor() == '+') {
         return new Num(((Num) exp1).getValor() + ((Num) exp2).getValor());
-      } else if (op.toString().equals("-")) {
+      } else if (op.getValor() == '-') {
         return new Num(((Num) exp1).getValor() - ((Num) exp2).getValor());
       } else { // op == *
+        System.out.println("aaaa");
         return new Num(((Num) exp1).getValor() * ((Num) exp2).getValor());
       }
     }
@@ -28,6 +32,6 @@ public class AritExp extends Exp {
 
   @Override
   public String toString() {
-    return "";
+    return exp1.toString() + " " + op.toString() + " " + exp2.toString();
   }
 }
